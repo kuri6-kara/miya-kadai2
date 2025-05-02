@@ -9,7 +9,7 @@ Dockerビルド
 　
 　1.リポジトリからダウンロード
 　$git clone git@github.com:kuri6-kara/miya-kadai2.git
-　2.srcディレクトリにある「.env.example」をコピーして 「.env」を作成し DBの設定を変更
+　2.srcディレクトリにある「.env.example」をコピーして 「.env」を作成しDBの設定を変更
 　　$cp .env.example .env
 　　　DB_HOST=mysql
 　　　DB_DATABASE=laravel_db
