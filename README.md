@@ -1,6 +1,6 @@
 ## アプリケーション名
 ```
-お問合せフォーム
+もぎたて
 ```
 
 ## 環境構築
@@ -8,7 +8,7 @@
 Dockerビルド
 　
 　1.リポジトリからダウンロード
-　$git clone git@github.com:kuri6-kara/miya-kadai1.git
+　$git clone git@github.com:kuri6-kara/miya-kadai2.git
 　2.srcディレクトリにある「.env.example」をコピーして 「.env」を作成し DBの設定を変更
 　　$cp .env.example .env
 　　　DB_HOST=mysql
