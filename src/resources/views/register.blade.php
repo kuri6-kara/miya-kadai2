@@ -9,7 +9,7 @@
     <div class="contact-form__heading">
         <h2>Contact</h2>
     </div>
-    <form action="/products/register" method="post" enctype="multipart/form-data">
+    <form action="/products" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form__group">
             <div class="form__group-title">
@@ -51,7 +51,9 @@
                 </div>
                 <div class="form__group-content">
                     <div class="form__input--file">
+                        <img src="{{ '/storage/' . $contact['image_file'] }}">
                         <input type="file" name="image">
+                        <input type="hidden" name="image" value="{{ $products['image']}}">
                     </div>
                     <div class="form__error">
                         @error('image')
@@ -70,11 +72,10 @@
                     <div class="form__group-content">
                         <div class="form__input--text">
                             @foreach($seasons as $season)
-                            <label>
-                                <input type="checkbox" name="seasons_ids[]" value="{{ $season->id }}" />
+                                <input type="checkbox" name="season_ids[]" value="{{ $season->id }}" />
                                 {{ $season->content }}
-                            </label>
-                            @endforeach
+                                <input type="hidden" name="season_ids[]" value="{{ $season->id }}" />
+                                @endforeach
                         </div>
                     </div>
                     <div class="form__error">
@@ -108,7 +109,7 @@
         </div>
 
         <div class="form__button">
-            <button class="form__button-submit" type="submit">戻る</button>
+            <button type="button" onclick="location.href='/products' ">戻る</button>
         </div>
         <div class="form__button">
             <button class="form__button-submit" type="submit">登録</button>
