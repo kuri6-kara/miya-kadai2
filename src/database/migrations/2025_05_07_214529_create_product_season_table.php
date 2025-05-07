@@ -29,6 +29,6 @@ class CreateProductSeasonsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_seasons');
+        Schema::dropIfExists('product_season');
     }
 }
