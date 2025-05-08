@@ -51,7 +51,7 @@
                 </div>
                 <div class="form__group-content">
                     <div class="form__input--file">
-                        <img src="{{ '/storage/' . $product['image'] }}">
+                        <img src="{{ '/storage/' . $products['image'] }}">
                         <input type="file" name="image">
                         <input type="hidden" name="image" value="{{ $product['image']}}">
                     </div>

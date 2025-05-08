@@ -10,7 +10,9 @@ class RegisterController extends Controller
 {
     public function index()
     {
-        return view('register');
+        $products = Product::all();
+        $seasons = Season::all();
+        return view('register', compact('products', 'seasons'));
     }
 
     public function store(Request $request)
