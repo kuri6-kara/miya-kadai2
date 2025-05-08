@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,7 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/products', [ProductController::class, 'index']);
 Route::post('/products/search', [ProductController::class, 'search']);
+
+Route::get('/products/register', [RegisterController::class, 'index']);
+Route::post('/products', [RegisterController::class,'store']);
 
