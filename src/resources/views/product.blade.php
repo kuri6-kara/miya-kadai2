@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="product">
-    <h2 class="product__heading content__heading">商品一覧</h2>
+    <h2 class="product__heading">商品一覧</h2>
     <div class="form__button">
         <a class="header__button" href="/products/register">
             +商品を追加
