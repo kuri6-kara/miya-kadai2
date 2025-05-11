@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ShowRequest;
 use App\Models\Product;
 use App\Models\Season;
 use Illuminate\Http\Request;
@@ -15,7 +16,7 @@ class ShowController extends Controller
         return view('show', compact('products', 'seasons'));
     }
 
-    public function update(Request $request)
+    public function update(ShowRequest $request)
     {
         $products = $request->only(['name', 'price', 'image', 'description']);
         $seasons = $request->only(['name']);

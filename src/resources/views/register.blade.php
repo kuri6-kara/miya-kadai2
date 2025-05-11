@@ -34,7 +34,7 @@
                 </div>
                 <div class="form__group-content">
                     <div class="form__input--text">
-                        <input type="text" name="price" placeholder="値段を入力" value="{{ old('price') }}" />
+                        <input type="number" name="price" placeholder="値段を入力" value="{{ old('price') }}" />
                     </div>
                     <div class="form__error">
                         @error('price')
@@ -80,7 +80,7 @@
                     </div>
                     <div class="form__error">
                         <div class="seasons">
-                            @error('gender')
+                            @error('season')
                             {{ $message }}
                             @enderror
                         </div>
