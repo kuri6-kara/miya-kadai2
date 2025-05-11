@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ProductSeasonsTableSeeder extends Seeder
+class ProductSeasonTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -33,36 +33,36 @@ class ProductSeasonsTableSeeder extends Seeder
             'product_id' => '4',
             'season_id' => '2'
         ];
-        DB::table('product_seasons')->insert($param);
+        DB::table('product_season')->insert($param);
         $param = [
             'product_id' => '5',
             'season_id' => '2'
         ];
-        DB::table('product_seasons')->insert($param);
+        DB::table('product_season')->insert($param);
         $param = [
             'product_id' => '6',
             'season_id' => '2,3'
         ];
-        DB::table('product_seasons')->insert($param);
+        DB::table('product_season')->insert($param);
         $param = [
             'product_id' => '7',
             'season_id' => '1,2'
         ];
-        DB::table('product_seasons')->insert($param);
+        DB::table('product_season')->insert($param);
         $param = [
             'product_id' => '8',
             'season_id' => '2,3'
         ];
-        DB::table('product_seasons')->insert($param);
+        DB::table('product_season')->insert($param);
         $param = [
             'product_id' => '9',
             'season_id' => '2'
         ];
-        DB::table('product_seasons')->insert($param);
+        DB::table('product_season')->insert($param);
         $param = [
             'product_id' => '10',
             'season_id' => '1,2'
         ];
-        DB::table('product_seasons')->insert($param);
+        DB::table('product_season')->insert($param);
     }
 }
