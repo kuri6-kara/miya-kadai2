@@ -45,8 +45,6 @@
             <input type="text" name="description" value="{{ $product['description'] }}">
         </div>
 
-        <img src="{{ asset('/storage/' . $product->images) }}" alt="{{ $product->name }}">
-
 </div>
 
 @endsection
