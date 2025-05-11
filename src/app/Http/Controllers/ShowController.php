@@ -20,7 +20,14 @@ class ShowController extends Controller
         $products = $request->only(['name', 'price', 'image', 'description']);
         $seasons = $request->only(['name']);
         Product::find($request->id)->update($products);
-Season::find($request->id)->update($seasons);
+        Season::find($request->id)->update($seasons);
+        return redirect('/products');
+    }
+
+    public function destroy(Request $request)
+    {
+        Product::find($request->id)->delete();
+        Season::find($request->id)->delete();
         return redirect('/products');
     }
 }

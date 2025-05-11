@@ -9,7 +9,6 @@
     <form action="/products/{productId}/update" method="POST" enctype="multipart/form-data">
         @method('PUT')
         @csrf
-
         <div class="form__label--item">
             商品画像
         </div>
@@ -51,8 +50,20 @@
         <div class="update-form__button">
             <button type="button" onclick="location.href='/products' ">更新</button>
         </div>
-        
     </form>
+
+    <form class="delete-form">
+        <form class="delete-form" action="/products/{productId}/delete" method="POST">
+            @method('DELETE')
+            @csrf
+            <div class="delete-form__button">
+                <input type="hidden" name="id" value="{{ $product['id'] }}">
+                <button class="delete-form__button-submit" type="submit">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+        </form>
+
 </div>
 
 @endsection
