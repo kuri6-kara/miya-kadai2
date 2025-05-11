@@ -21,7 +21,7 @@ class RegisterController extends Controller
         $product = Product::create(
             $request->only(['name', 'price', 'description'])
         );
-        $product['image'] = $request->image->store('image', 'public');
+        $product['image'] = $request->file('image')->store('image', 'public');
         $product->seasons()->sync($request->season_ids);
         return view('product');
     }

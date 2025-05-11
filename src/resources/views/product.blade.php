@@ -26,6 +26,7 @@
             <a class="card_link" href="/products/{productId}">
                 <div class="card">
                     <img src="{{ asset('/storage/' . $product->image) }}" alt="{{ $product->name }}">
+                    <input type="hidden" name="image" value="{{ $product['image']}}">
                     <div class="card-body">
                         <div class="card-body">
                             <p class="card-text">{{ $product->name }}</p>
