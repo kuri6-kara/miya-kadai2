@@ -5,9 +5,9 @@
 @endsection
 
 @section('content')
-<div class="contact-form__content">
-    <div class="contact-form__heading">
-        <h2>Contact</h2>
+<div class="register-form__content">
+    <div class="register-form__heading">
+        <h2>商品登録</h2>
     </div>
     <form action="/products" method="post" enctype="multipart/form-data">
         @csrf

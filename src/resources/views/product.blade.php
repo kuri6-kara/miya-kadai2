@@ -12,7 +12,8 @@
             +商品を追加
         </a>
     </div>
-    <div class="product__inner">
+
+    <div class="product-group">
         <form class="search-form" action="/products/search" method="post">
             @csrf
             <input class="search-form__keyword-input" type="text" name="keyword" value="{{ request('keyword')}}" placeholder="商品名で検索">
@@ -21,11 +22,18 @@
             </div>
         </form>
 
+        <div class="sort-form">
+            <select name="sort" class="form-select">
+                <option value="price_desc" {{ request('sort') == 'price_desc' ? 'selected' : '' }}>高い順に表示</option>
+                <option value="price_asc" {{ request('sort') == 'price_asc' ? 'selected' : '' }}>低い順に表示</option>
+            </select>
+        </div>
+
         <div class="card">
             @foreach($products as $product)
-            <a class="card_link" href="/products/{productId}">
+            <a href="/products/{productId}" class="card_link">
                 <div class="card">
-                    <img src="{{ asset('/storage/' . $product->image) }}" alt="{{ $product->name }}">
+                    <img src="{{ '/storage/' . $product['image'] }}">
                     <input type="hidden" name="image" value="{{ $product['image']}}">
                     <div class="card-body">
                         <div class="card-body">
