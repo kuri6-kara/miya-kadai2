@@ -16,6 +16,7 @@ use App\Http\Controllers\RegisterController;
 */
 
 Route::get('/products', [ProductController::class, 'index']);
+Route::get('/products/search', [ProductController::class, 'search']);
 Route::post('/products/search', [ProductController::class, 'search']);
 
 Route::get('/products/register', [RegisterController::class, 'index']);

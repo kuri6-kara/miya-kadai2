@@ -23,7 +23,7 @@
 
         <div class="card">
             @foreach($products as $product)
-            <a href="{{ route('products.show', $product->id) }}" class="text-decoration-none text-dark">
+            <a class="card_link" href="/products/{productId}">
                 <div class="card">
                     <img src="{{ asset('/storage/' . $product->image) }}" alt="{{ $product->name }}">
                     <div class="card-body">
@@ -33,7 +33,7 @@
                         </div>
                     </div>
                 </div>
-                </a>
+            </a>
             @endforeach
         </div>
     </div>
