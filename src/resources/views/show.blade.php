@@ -45,6 +45,14 @@
             <input type="text" name="description" value="{{ $product['description'] }}">
         </div>
 
+        <div class="return-form__button">
+            <button type="button" onclick="location.href='/products' ">戻る</button>
+        </div>
+        <div class="update-form__button">
+            <button type="button" onclick="location.href='/products' ">更新</button>
+        </div>
+        
+    </form>
 </div>
 
 @endsection
