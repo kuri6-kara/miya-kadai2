@@ -16,7 +16,7 @@ class ProductController extends Controller
         return view('product', compact('products', 'seasons'));
     }
 
-    public function search(Request $request) 
+    public function search(Request $request)
     {
         if (!empty($request->keyword)) {
             $query->where('name', 'like', '%' . $request->keyword . '%');
