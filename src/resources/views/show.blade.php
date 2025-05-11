@@ -17,6 +17,11 @@
             <input type="file" name="image">
             <input type="hidden" name="image" value="{{ $product['image']}}">
         </div>
+        <div class="form__error">
+            @error('image')
+            {{ $message }}
+            @enderror
+        </div>
 
         <div class="form__label--item">
             商品名
@@ -24,10 +29,20 @@
         <div class=form__inout--text>
             <input type="text" name="name" value="{{ $product['name'] }}">
         </div>
+        <div class="form__error">
+            @error('name')
+            {{ $message }}
+            @enderror
+        </div>
 
         <div class="form__label--item">値段</div>
         <div class="form__input--text">
-            <input type="text" name="price" value="{{ $product['price'] }}">
+            <input type="number" name="price" value="{{ $product['price'] }}">
+        </div>
+        <div class="form__error">
+            @error('price')
+            {{ $message }}
+            @enderror
         </div>
 
         <div class="form__label--item">季節</div>
@@ -38,10 +53,20 @@
             <input type="hidden" name="season_ids[]" value="{{ $season->id }}" />
             @foreach
         </div>
+        <div class="form__error">
+            @error('season')
+            {{ $message }}
+            @enderror
+        </div>
 
         <div class="form__label--item">商品説明</div>
         <div class="form__input--text">
             <input type="text" name="description" value="{{ $product['description'] }}">
+        </div>
+        <div class="form__error">
+                @error('description')
+                {{ $message }}
+                @enderror
         </div>
 
         <div class="return-form__button">
