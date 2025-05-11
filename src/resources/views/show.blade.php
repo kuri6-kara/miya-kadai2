@@ -7,7 +7,7 @@
 @section('content')
 <div class="show">
     <form action="/products/{productId}/update" method="POST" enctype="multipart/form-data">
-        @method('PUT')
+        @method('PATCH')
         @csrf
         <div class="form__label--item">
             商品画像
