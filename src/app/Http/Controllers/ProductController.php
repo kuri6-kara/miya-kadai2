@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProductRequest;
+use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Season;
-use Illuminate\Http\Request;
+use App\Http\Requests\ProductRequest;
 
 class ProductController extends Controller
 {
@@ -35,7 +35,7 @@ class ProductController extends Controller
         return view('product', compact('products', 'seasons'));
     }
 
-    public function create(Request $request)
+    public function create(ProductRequest $request)
     {
         $products = Product::all();
         $seasons = Season::all();
