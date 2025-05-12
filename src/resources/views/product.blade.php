@@ -31,7 +31,7 @@
 
         <div class="card">
             @foreach($products as $product)
-            <a href="/products/{productId}" class="card_link">
+            <a href="/products/{{ $product['id'] }}" class="card_link">
                 <div class="card">
                     <img src="{{ '/storage/' . $product['image'] }}">
                     <input type="hidden" name="image" value="{{ $product['image']}}">

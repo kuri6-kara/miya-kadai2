@@ -71,8 +71,7 @@
                         <div class="form__input--text">
                             @foreach($seasons as $season)
                             <input type="checkbox" name="season_ids[]" value="{{ $season->id }}" />
-                            {{ $season->content }}
-                            <input type="hidden" name="season_ids[]" value="{{ $season->id }}" />
+                            {{ $season->name }}
                             @endforeach
                         </div>
                     </div>
