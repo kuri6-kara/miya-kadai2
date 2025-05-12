@@ -14,7 +14,6 @@ class Product extends Model
         'price',
         'image',
         'description',
-        'season_ids',
     ];
 
     public function seasons()

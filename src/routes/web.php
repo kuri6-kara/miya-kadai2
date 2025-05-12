@@ -2,8 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ShowController;
-use App\Http\Controllers\RegisterController;
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,11 +19,9 @@ Route::get('/products', [ProductController::class, 'index']);
 Route::get('/products/search', [ProductController::class, 'search']);
 Route::post('/products/search', [ProductController::class, 'search']);
 
-Route::get('/products/{productId}', [ShowController::class, 'index']);
-Route::patch('/products/{productId}/update', [ShowController::class, 'update']);
-Route::delete('/products/{productId}/delete', [ShowController::class, 'destroy']);
+Route::get('/products/register', [ProductController::class, 'create']);
+Route::post('/products', [ProductController::class, 'store']);
 
-
-Route::get('/products/register', [RegisterController::class, 'index']);
-Route::post('/products', [RegisterController::class,'store']);
-
+Route::get('/products/{productId}', [ProductController::class, 'show']);
+Route::patch('/products/{productId}/update', [ProductController::class, 'update']);
+Route::delete('/products/{productId}/delete', [ProductController::class, 'destroy']);
