@@ -51,11 +51,11 @@ class ProductController extends Controller
         return redirect('/products');
     }
 
-    public function show()
+    public function show($id)
     {
-        $products = Product::all();
+        $product = Product::find($id);
         $seasons = Season::all();
-        return view('show', compact('products', 'seasons'));
+        return view('show', compact('product', 'seasons'));
     }
 
     public function update(ProductRequest $request)
