@@ -44,12 +44,11 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request)
     {
-        $product = Product::create(
-            $request->only(['name', 'price', 'description'])
-        );
-        $product['image'] = $request->file('image')->store('image', 'public');
+        $data = $request->only(['name', 'price', 'description', 'image']);
+        $data['image'] = $request->file('image')->store('image', 'public');
+        $product = Product::create($data);
         $product->seasons()->sync($request->season_ids);
-        return view('product');
+        return redirect('/products');
     }
 
     public function show()

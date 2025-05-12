@@ -26,7 +26,7 @@ class ProductRequest extends FormRequest
         return [
             'name' => ['required', 'string'],
             'price' => ['required', 'integer', 'between:0,10000'],
-            'season' => ['required'],
+            'season_ids' => ['required'],
             'description' => ['required', 'string', 'max:120'],
             'image' => ['required', 'mimes:png,jpeg'],
         ];
@@ -40,7 +40,7 @@ class ProductRequest extends FormRequest
             'price.integer' => '数値で入力してください',
             'price.between:0,10000' => '0~10000円以内で入力してください',
             'gender.required' => '性別を選択してください',
-            'season.required' => '季節を選択してください',
+            'season_ids.required' => '季節を選択してください',
             'description.required' => '商品説明を入力してください',
             'description.max' => '120文字以内で入力してください',
             'image.required' => '商品画像を登録してください',
