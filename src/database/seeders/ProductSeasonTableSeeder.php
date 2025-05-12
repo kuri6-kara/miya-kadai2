@@ -16,19 +16,24 @@ class ProductSeasonTableSeeder extends Seeder
     {
         $param = [
             'product_id' => '1',
-            'season_id' => '3,4'
+            'season_id' => '3'
         ];
-        DB::table('product_seasons')->insert($param);
+        DB::table('product_season')->insert($param);
+        $param = [
+            'product_id' => '1',
+            'season_id' => '4'
+        ];
+        DB::table('product_season')->insert($param);
         $param = [
             'product_id' => '2',
             'season_id' => '1'
         ];
-        DB::table('product_seasons')->insert($param);
+        DB::table('product_season')->insert($param);
         $param = [
             'product_id' => '3',
             'season_id' => '4'
         ];
-        DB::table('product_seasons')->insert($param);
+        DB::table('product_season')->insert($param);
         $param = [
             'product_id' => '4',
             'season_id' => '2'
@@ -41,17 +46,32 @@ class ProductSeasonTableSeeder extends Seeder
         DB::table('product_season')->insert($param);
         $param = [
             'product_id' => '6',
-            'season_id' => '2,3'
+            'season_id' => '2'
+        ];
+        DB::table('product_season')->insert($param);
+        $param = [
+            'product_id' => '6',
+            'season_id' => '3'
         ];
         DB::table('product_season')->insert($param);
         $param = [
             'product_id' => '7',
-            'season_id' => '1,2'
+            'season_id' => '1'
+        ];
+        DB::table('product_season')->insert($param);
+        $param = [
+            'product_id' => '7',
+            'season_id' => '2'
         ];
         DB::table('product_season')->insert($param);
         $param = [
             'product_id' => '8',
-            'season_id' => '2,3'
+            'season_id' => '2'
+        ];
+        DB::table('product_season')->insert($param);
+        $param = [
+            'product_id' => '8',
+            'season_id' => '3'
         ];
         DB::table('product_season')->insert($param);
         $param = [
@@ -61,7 +81,12 @@ class ProductSeasonTableSeeder extends Seeder
         DB::table('product_season')->insert($param);
         $param = [
             'product_id' => '10',
-            'season_id' => '1,2'
+            'season_id' => '1'
+        ];
+        DB::table('product_season')->insert($param);
+        $param = [
+            'product_id' => '10',
+            'season_id' => '2'
         ];
         DB::table('product_season')->insert($param);
     }

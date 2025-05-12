@@ -32,6 +32,8 @@ Laravel環境構築
 　5."The stream or file could not be opened"エラーが発生した場合
 srcディレクトリにあるstorageディレクトリ以下の権限を変更
 　　$ chmod -R 777 storage
+  6.シンボリックリンクの作成
+     > php artisan storage:link
 ```
 
 ##　使用技術
@@ -46,6 +48,6 @@ srcディレクトリにあるstorageディレクトリ以下の権限を変更
 
 ## URL
 ```
-　・開発環境：http://localhost/
+　・商品一覧：http://localhost/products/
 　・phpMyAdmin：http://localhost:8080/
 ```

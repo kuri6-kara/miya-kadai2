@@ -14,7 +14,7 @@ class ProductController extends Controller
         $products = Product::with('seasons')->Paginate(6);
         $products = Product::all();
         $seasons = Season::all();
-        return view('product', compact('products', 'seasons'));
+        return view('product', compact('products'));
     }
 
     public function search(Request $request)
@@ -32,7 +32,7 @@ class ProductController extends Controller
 
         $products = $query->Paginate(6);
 
-        return view('product', compact('products', 'seasons'));
+        return view('product', compact('products'));
     }
 
     public function create(ProductRequest $request)
