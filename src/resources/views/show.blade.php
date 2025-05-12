@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="show">
-    <form action="/products/{productId}/update" method="POST" enctype="multipart/form-data">
+    <form action="/products/{{ $product['id'] }}/update" method="POST" enctype="multipart/form-data">
         @method('PATCH')
         @csrf
         <div class="form__label--item">
@@ -49,9 +49,8 @@
         <div class="form__input--text">
             @foreach($seasons as $season)
             <input type="checkbox" name="season_ids[]" value="{{ $season->id }}">
-            {{ $season->content }}
-            <input type="hidden" name="season_ids[]" value="{{ $season->id }}">
-            @foreach
+            {{ $season->name }}
+            @endforeach
         </div>
         <div class="form__error">
             @error('season')
@@ -64,9 +63,9 @@
             <input type="text" name="description" value="{{ $product['description'] }}">
         </div>
         <div class="form__error">
-                @error('description')
-                {{ $message }}
-                @enderror
+            @error('description')
+            {{ $message }}
+            @enderror
         </div>
 
         <div class="return-form__button">
@@ -77,17 +76,16 @@
         </div>
     </form>
 
-    <form class="delete-form">
-        <form class="delete-form" action="/products/{productId}/delete" method="POST">
-            @method('DELETE')
-            @csrf
-            <div class="delete-form__button">
-                <input type="hidden" name="id" value="{{ $product['id'] }}">
-                <button class="delete-form__button-submit" type="submit">
-                    <i class="fas fa-trash-alt"></i>
-                </button>
-            </div>
-        </form>
+    <form class="delete-form" action="/products/{{ $product['id'] }}/delete" method="POST">
+        @method('DELETE')
+        @csrf
+        <div class="delete-form__button">
+            <input type="hidden" name="id" value="{{ $product['id'] }}">
+            <button class="delete-form__button-submit" type="submit">
+                <i class="fas fa-trash-alt"></i>
+            </button>
+        </div>
+    </form>
 
 </div>
 
