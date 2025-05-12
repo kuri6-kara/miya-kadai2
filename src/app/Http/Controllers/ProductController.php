@@ -35,7 +35,7 @@ class ProductController extends Controller
         return view('product', compact('products'));
     }
 
-    public function create(ProductRequest $request)
+    public function create(Request $request)
     {
         $products = Product::all();
         $seasons = Season::all();

@@ -27,7 +27,7 @@ class ProductRequest extends FormRequest
             'name' => ['required', 'string'],
             'price' => ['required', 'integer', 'between:0,10000'],
             'season' => ['required'],
-            'description' => ['required', 'string', 'max120'],
+            'description' => ['required', 'string', 'max:120'],
             'image' => ['required', 'mimes:png,jpeg'],
         ];
     }
@@ -42,7 +42,7 @@ class ProductRequest extends FormRequest
             'gender.required' => '性別を選択してください',
             'season.required' => '季節を選択してください',
             'description.required' => '商品説明を入力してください',
-            'description.max120' => '120文字以内で入力してください',
+            'description.max' => '120文字以内で入力してください',
             'image.required' => '商品画像を登録してください',
             'image.mimes:png,jpeg' => '「.png」または「.jpeg」形式でアップロードしてください',
         ];

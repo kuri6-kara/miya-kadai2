@@ -110,7 +110,7 @@
             <button type="button" onclick="location.href='/products' ">戻る</button>
         </div>
         <div class="register-form__button">
-            <button type="button" onclick="location.href='/products' ">登録</button>
+            <button type="submit">登録</button>
         </div>
     </form>
 </div>
