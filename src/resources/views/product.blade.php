@@ -8,9 +8,9 @@
 <div class="product">
     <h2 class="product__heading">商品一覧</h2>
     <div class="form__button">
-        <a class="header__button" href="/products/register">
-            +商品を追加
-        </a>
+        <div class="register-form__button">
+            <button type="button" onclick="location.href='/products/register' ">+商品を追加</button>
+        </div>
     </div>
 
     <div class="product-group">
