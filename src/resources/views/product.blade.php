@@ -49,5 +49,5 @@
         </div>
     </div>
 </div>
-{{ $products->links() }}
+{{ $products->links('vendor.pagination.semantic-ui') }}
 @endsection
