@@ -11,9 +11,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::with('seasons')->Paginate(6);
-        $products = Product::all();
-        $seasons = Season::all();
+        $products = Product::Paginate(6);
         return view('product', compact('products'));
     }
 
