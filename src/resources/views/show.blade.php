@@ -48,8 +48,7 @@
         <div class="form__label--item">季節</div>
         <div class="form__input--text">
             @foreach($seasons as $season)
-            <input type="checkbox" name="season_ids[]" value="{{ $season->id }}">
-            {{ $product->seasons->contains($season->id) ? 'checked' : '' }}>{{ $season->name }}
+            <input type="checkbox" name="season_ids[]" value="{{ $season->id }}" {{ $product->seasons->contains($season->id) ? 'checked' : '' }}>{{ $season->name }}
             @endforeach
         </div>
         <div class="form__error">
