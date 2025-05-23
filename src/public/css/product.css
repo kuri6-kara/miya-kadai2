@@ -21,14 +21,17 @@
 
 .content {
     display: flex;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .card {
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
+    gap: 50px;
 }
 
 .card_image {
-    width: 300px;
+    width: 374px;
 }
