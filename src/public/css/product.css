@@ -19,10 +19,16 @@
     letter-spacing: 0%;
 }
 
+.content {
+    display: flex;
+}
+
 .card {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: left;
 }
 
-
+.card_image {
+    width: 300px;
+}
