@@ -5,6 +5,9 @@
 @endsection
 
 @section('content')
+@php 
+dump($errors->all())
+@endphp
 <div class="show">
     <form action="/products/{{ $product['id'] }}/update" method="POST" enctype="multipart/form-data">
         @method('PATCH')
@@ -52,7 +55,7 @@
             @endforeach
         </div>
         <div class="form__error">
-            @error('season')
+            @error('season_ids')
             {{ $message }}
             @enderror
         </div>
@@ -71,7 +74,7 @@
             <button type="button" onclick="location.href='/products' ">戻る</button>
         </div>
         <div class="update-form__button">
-            <button type="button" onclick="location.href='/products' ">更新</button>
+            <button type="submit">更新</button>
         </div>
     </form>
 
@@ -85,7 +88,6 @@
             </button>
         </div>
     </form>
-
 </div>
 
 @endsection
