@@ -34,16 +34,14 @@
         <div class="card">
             @foreach($products as $product)
             <a href="/products/{{ $product['id'] }}" class="card_link">
-                <div class="card">
-                    <img src="{{ '/storage/image/' . $product['image'] }}">
-                    <input type="hidden" name="image" value="{{ $product['image']}}">
-                    <div class="card-body">
-                        <div class="card-body">
-                            <p class="card-text">{{ $product->name }}</p>
-                            <p class="card-text">{{ $product->price }}</p>
-                        </div>
+                    <div class="card_image">
+                        <img src="{{ '/storage/image/' . $product['image'] }}">
+                        <input type="hidden" name="image" value="{{ $product['image']}}">
                     </div>
-                </div>
+                    <div class="card_text">
+                        <p class="card_name">{{ $product->name }}</p>
+                        <p class="card_price">{{ $product->price }}</p>
+                    </div>
             </a>
             @endforeach
         </div>

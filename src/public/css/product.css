@@ -20,10 +20,9 @@
 }
 
 .card {
-    width: 374;
-    height: 350;
-    border-radius: 5px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
+
 
