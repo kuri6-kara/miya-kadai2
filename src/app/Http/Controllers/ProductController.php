@@ -22,10 +22,10 @@ class ProductController extends Controller
         if (!empty($request->keyword)) {
             $query->where('name', 'like', '%' . $request->keyword . '%');
         }
-
-        if ($sort = $request->sort) {
-            $direction = $request->direction == 'desc' ? 'desc' : 'asc';
-            $query->orderBy($sort, $direction);
+        dump($request->all());
+        if (!empty($request->sort)) {
+            dump('2:' . $request->sort);
+            $query->orderBy('price', $request->sort);
         }
 
         $products = $query->Paginate(6);
@@ -71,5 +71,4 @@ class ProductController extends Controller
         Season::find($request->id)->delete();
         return redirect('/products');
     }
-
 }

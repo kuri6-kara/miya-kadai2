@@ -5,9 +5,9 @@
 @endsection
 
 @section('content')
-@php 
+<!-- @php 
 dump($errors->all())
-@endphp
+@endphp -->
 <div class="show">
     <form action="/products/{{ $product['id'] }}/update" method="POST" enctype="multipart/form-data">
         @method('PATCH')

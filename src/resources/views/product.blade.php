@@ -22,14 +22,15 @@
             <div class="search-form__actions">
                 <input class="search-form__search-btn btn" type="submit" value="検索">
             </div>
+
+            <div class="sort-form">
+                <select name="sort" class="form-select">
+                    <option value="desc" {{ request('sort') == 'desc' ? 'selected' : '' }}>高い順に表示</option>
+                    <option value="asc" {{ request('sort') == 'asc' ? 'selected' : '' }}>低い順に表示</option>
+                </select>
+            </div>
         </form>
 
-        <div class="sort-form">
-            <select name="sort" class="form-select">
-                <option value="price_desc" {{ request('sort') == 'price_desc' ? 'selected' : '' }}>高い順に表示</option>
-                <option value="price_asc" {{ request('sort') == 'price_asc' ? 'selected' : '' }}>低い順に表示</option>
-            </select>
-        </div>
 
         <div class="card">
             @foreach($products as $product)
