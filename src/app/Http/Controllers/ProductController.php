@@ -22,9 +22,9 @@ class ProductController extends Controller
         if (!empty($request->keyword)) {
             $query->where('name', 'like', '%' . $request->keyword . '%');
         }
-        dump($request->all());
+        // dump($request->all());
         if (!empty($request->sort)) {
-            dump('2:' . $request->sort);
+            // dump('2:' . $request->sort);
             $query->orderBy('price', $request->sort);
         }
 
@@ -49,26 +49,26 @@ class ProductController extends Controller
         return redirect('/products');
     }
 
-    public function show($id)
+    public function show($productId)
     {
-        $product = Product::find($id);
+        $product = Product::find($productId);
         $seasons = Season::all();
         return view('show', compact('product', 'seasons'));
     }
 
-    public function update(ProductRequest $request, $id)
+    public function update(ProductRequest $request, $productId)
     {
-        $products = $request->only(['name', 'price', 'image', 'description']);
-        $seasons = $request->only(['name']);
-        Product::find($id)->update($products);
-        Season::find($request->id)->update($seasons);
+        $data = $request->only(['name', 'price', 'image', 'description']);
+        
+        $product = Product::find($productId);
+        $product->update($data);
+        $product->seasons()->sync($request->season_ids);
         return redirect('/products');
     }
 
-    public function destroy(Request $request)
+    public function destroy(Request $request, $productId)
     {
-        Product::find($request->id)->delete();
-        Season::find($request->id)->delete();
+        Product::find($productId)->delete();
         return redirect('/products');
     }
 }
