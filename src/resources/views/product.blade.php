@@ -16,7 +16,7 @@
     </div>
 
     <div class="product-group">
-        <form class="search-form" action="/products/search" method="post">
+        <form class="search-form" action="/products/search" method="get">
             @csrf
             <input class="search-form__keyword-input" type="text" name="keyword" value="{{ request('keyword')}}" placeholder="商品名で検索">
             <div class="search-form__actions">
