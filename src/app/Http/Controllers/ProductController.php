@@ -28,7 +28,7 @@ class ProductController extends Controller
             $query->orderBy('price', $request->sort);
         }
 
-        $products = $query->Paginate(6);
+        $products = $query->Paginate(6)->appends($request->query());;
 
         return view('product', compact('products'));
     }
@@ -59,7 +59,7 @@ class ProductController extends Controller
     public function update(ProductRequest $request, $productId)
     {
         $data = $request->only(['name', 'price', 'image', 'description']);
-        
+
         $product = Product::find($productId);
         $product->update($data);
         $product->seasons()->sync($request->season_ids);
