@@ -16,7 +16,7 @@ dump($errors->all())
             商品画像
         </div>
         <div class="form__input--file">
-            <img src="{{ asset('/storage/image/' . $product->image) }}" alt="{{ $product->name }}">
+            <img src="{{ asset('/storage/' . $product->image) }}" alt="{{ $product->name }}">
             <input type="file" name="image">
             <input type="hidden" name="image" value="{{ $product['image']}}">
         </div>
