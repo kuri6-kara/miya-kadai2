@@ -59,7 +59,7 @@ class ProductController extends Controller
     public function update(ProductRequest $request, $productId)
     {
         $data = $request->only(['name', 'price', 'image', 'description']);
-
+        $data['image'] = $request->file('image')->store('image', 'public');
         $product = Product::find($productId);
         $product->update($data);
         $product->seasons()->sync($request->season_ids);
