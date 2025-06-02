@@ -10,13 +10,18 @@
     justify-content: space-between;
 }
 
+.product__group{
+    margin-left: 50px;
+    width: 300px;
+}
+
 
 
 .card {
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
-    gap: 50px;
+    gap: 80px;
 }
 
 .card_image {
