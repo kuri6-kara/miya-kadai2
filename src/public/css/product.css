@@ -8,6 +8,7 @@
     writing-mode: horizontal-tb;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .product__group{
