@@ -1,4 +1,4 @@
-.product {
+.content {
     display: flex;
     margin-left: 100px;
     margin-right: 100px;
@@ -21,7 +21,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
-    gap: 80px;
+    gap: 100px;
 }
 
 .card_image {
