@@ -1,29 +1,16 @@
-.product__heading {
-    display: flex;
-    justify-content: space-between;
-    width: 1512;
-    height: 50;
-    padding-right: 40px;
-    padding-left: 40px;
-    gap: 1167px;
-}
-
-.product__title {
-    width: 128;
-    height: 48;
-    background: #333333;
-    font-family: Hiragino Kaku Gothic Pro;
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 100%;
-    letter-spacing: 0%;
-}
-
-.content {
+.product {
     display: flex;
     margin-left: 100px;
     margin-right: 100px;
 }
+
+.product__heading {
+    writing-mode: horizontal-tb;
+    display: flex;
+    justify-content: space-between;
+}
+
+
 
 .card {
     display: flex;
