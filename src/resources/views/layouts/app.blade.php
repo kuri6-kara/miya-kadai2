@@ -11,10 +11,8 @@
 </head>
 
 <body>
-    <div class="app">
-        <header class="header">
-            <h1 class="header__heading">mogitate</h1>
-        </header>
+    <div class="header">
+        <h1 class="header__title">mogitate</h1>
     </div>
 
     <main>

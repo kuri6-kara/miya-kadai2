@@ -1,12 +1,13 @@
 .header {
-  display: grid;
-  padding: 16px 0;
-  height: 80px;
-  border: 1px solid #F4F4F4;
+    background-color: #ffffff;
+    display: grid;
+    padding: 16px 0;
+    height: 80px;
+    border: 1px solid #f4f4f4;
 }
 
-.header__heading {
-    color: #F5C800;
+.header__title {
+    color: #f5c800;
     text-decoration: none;
     font-family: jsMath-cmti10;
     font-weight: 500;
