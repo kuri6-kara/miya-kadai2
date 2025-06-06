@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="product">
+
     <div class="product__heading">
         <h2>商品一覧</h2>
         <div class="register-form__button">
@@ -62,6 +62,6 @@
             </div>
         </div>
     </div>
-</div>
+
 
 @endsection

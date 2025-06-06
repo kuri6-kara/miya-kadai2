@@ -1,7 +1,9 @@
 .content {
     display: flex;
-    margin-left: 100px;
-    margin-right: 100px;
+    flex-direction: column;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    gap: 20px;
 }
 
 .product__heading {
@@ -11,9 +13,12 @@
     align-items: center;
 }
 
-.product__group{
-    margin-left: 50px;
-    width: 300px;
+.product-group{
+    margin-left: 40px;
+    margin-right: 40px;
+    gap: 30px;
+    display: flex
+
 }
 
 
