@@ -14,21 +14,23 @@
     </div>
 
     <div class="product-group">
-        <form class="search-form" action="/products/search" method="get">
-            @csrf
-            <input class="search-form__keyword-input" type="text" name="keyword" value="{{ request('keyword')}}" placeholder="商品名で検索">
-            <div class="search-form__actions">
-                <input class="search-form__search-btn btn" type="submit" value="検索">
-            </div>
+        <div class="product-left">
+            <form class="search-form" action="/products/search" method="get">
+                @csrf
+                <input class="search-form__keyword-input" type="text" name="keyword" value="{{ request('keyword')}}" placeholder="商品名で検索">
+                <div class="search-form__actions">
+                    <input class="search-form__search-btn btn" type="submit" value="検索">
+                </div>
 
-            <div class="sort-form">
-                <select name="sort" class="form-select">
-                    <option value="desc" {{ request('sort') == 'desc' ? 'selected' : '' }}>高い順に表示</option>
-                    <option value="asc" {{ request('sort') == 'asc' ? 'selected' : '' }}>低い順に表示</option>
-                </select>
-            </div>
-        </form>
-        @if(@isset($sort)&& $sort != "")
+                <div class="sort-form">
+                    <select name="sort" class="form-select">
+                        <option value="desc" {{ request('sort') == 'desc' ? 'selected' : '' }}>高い順に表示</option>
+                        <option value="asc" {{ request('sort') == 'asc' ? 'selected' : '' }}>低い順に表示</option>
+                    </select>
+                </div>
+            </form>
+
+            <!-- @if(@isset($sort)&& $sort != "")
         <div class="sort_contents">
             <p class="searched_data">{{$sort}}</p>
             <div class="close-content">
@@ -37,25 +39,29 @@
                 </a>
             </div>
         </div>
-        @endif
-    </div>
+        @endif -->
+        </div>
 
-    <div class="card">
-        @foreach($products as $product)
-        <a href="/products/{{ $product['id'] }}" class="card_link">
-            <div class="card_content">
-                <img class="card_image" src="{{ '/storage/' . $product['image'] }}">
-                <input type="hidden" name="image" value="{{ $product['image']}}">
+        <div class="product-right">
+            <div class="card">
+                @foreach($products as $product)
+                <a href="/products/{{ $product['id'] }}" class="card_link">
+                    <div class="card_content">
+                        <img class="card_image" src="{{ '/storage/' . $product['image'] }}">
+                        <input type="hidden" name="image" value="{{ $product['image']}}">
+                    </div>
+                    <div class="card_text">
+                        <p class="card_name">{{ $product->name }}</p>
+                        <p class="card_price">{{ $product->price }}</p>
+                    </div>
+                </a>
+                @endforeach
             </div>
-            <div class="card_text">
-                <p class="card_name">{{ $product->name }}</p>
-                <p class="card_price">{{ $product->price }}</p>
+            <div class="pagination-content">
+                {{ $products->links('vendor.pagination.semantic-ui') }}
             </div>
-        </a>
-        @endforeach
+        </div>
     </div>
-
-    {{ $products->links('vendor.pagination.semantic-ui') }}
 </div>
 
 @endsection
