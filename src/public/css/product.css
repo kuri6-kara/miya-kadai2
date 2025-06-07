@@ -11,6 +11,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-right: 40px;
+    padding-left: 40px;
 }
 
 .product-group{
@@ -27,9 +29,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: left;
-    gap: 100px;
+    gap: 40px;
 }
 
 .card_image {
     width: 374px;
+}
+
+.card_text {
+    display: flex;
+    justify-content: space-between;
 }

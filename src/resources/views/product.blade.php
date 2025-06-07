@@ -46,7 +46,7 @@
             <div class="card">
                 @foreach($products as $product)
                 <a href="/products/{{ $product['id'] }}" class="card_link">
-                    <div class="card_content">
+                    <div class="card_image">
                         <img class="card_image" src="{{ '/storage/' . $product['image'] }}">
                         <input type="hidden" name="image" value="{{ $product['image']}}">
                     </div>
